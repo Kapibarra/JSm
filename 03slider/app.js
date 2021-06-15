@@ -3,7 +3,7 @@ const downBtn = document.querySelector('.down-button')
 const sidebar = document.querySelector('.sidebar')
 const mainSlide = document.querySelector('.main-slide')
 const slidesCount = mainSlide.querySelectorAll('div').length
-const container = document.querySelector('.container')
+const container = document.querySelector('.container-slider')
 
 let activeSlideIndex = 0
 
