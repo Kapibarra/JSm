@@ -57,17 +57,31 @@ function createRandomCircle() {
     const circle = document.createElement('div')
     const size = getRandomSize(10,60)
     const {width, height} = board.getBoundingClientRect()
+    const color = getRandomRgb()
     const x = getRandomSize(0, width - size)
     const y = getRandomSize(0, height - size)
 
     circle.classList.add('circle')
     circle.style.width = `${size}px`
     circle.style.height = `${size}px`
+    circle.style.background = `${color}`
+    circle.style.boxShadow = `0 0 5px ${color}`
     circle.style.top = `${y}px`
     circle.style.left = `${x}px`
+    board.style.boxShadow = `0px 0px 55px ${color}`
     board.append(circle)
 }
 
 function getRandomSize(min, max) {
     return Math.round(Math.random() * (max - min) + min)
 }
+function getRandomRgb() {
+    const num = Math.round(0xffffff * Math.random());
+    const r = num >> 16;
+    const g = num >> 8 & 255;
+    const b = num & 255;
+    return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+  }
+  
+  for (let i = 0; i < SQUARES_NUMBER; i++) {
+  }
