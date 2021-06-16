@@ -1,4 +1,3 @@
-
 function slidesPlugin(activeSlide = 0) {
     const slides = document.querySelectorAll('.slide')
 
