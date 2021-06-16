@@ -32,5 +32,4 @@ function getRandomRgb() {
   }
   
   for (let i = 0; i < SQUARES_NUMBER; i++) {
-    console.log(getRandomRgb());
   }
