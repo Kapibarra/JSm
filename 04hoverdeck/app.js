@@ -18,10 +18,9 @@ function setColor(element) {
     container.style.boxShadow = `0 0 12px ${color}, 0 0 20px ${color}`
 }
 function removeColor(element) {
-    const container = document.querySelector('.container')
     element.style.background = '#1d1d1d'
     element.style.boxShadow = `0 0 2px #000`
-    container.style.boxShadow = `0 0 12px #000, 0 0 20px ${color}`
+
 }
 
 function getRandomRgb() {
