@@ -20,10 +20,19 @@ timeList.addEventListener('click', (event) => {
 })
 
 board.addEventListener('click', event => {
-if (event.target.classList.contains('circle')) {
+if (event.target.classList.contains('circle') === true) {
+    console.log(event.target.classList.contains('circle'));
 score++
 event.target.remove()
 createRandomCircle()
+} else {
+   score--
+    event.target.querySelector('.circle').remove();
+    createRandomCircle()
+    if(score < 0) {
+        timeEl.parentNode.classList.add('hide')
+        finishGame()
+    }
 }
 })
 
@@ -49,8 +58,15 @@ function setTime(value) {
     timeEl.innerHTML = `00:${value}`
 }
 function finishGame() {
-board.innerHTML = `<h1>Ваш счет: <span class="primary">${score}</span><h1>`
+    if (score < 0 ) {
+        board.innerHTML = `<h1>Ну ты и мазила... Счет: <span class="primary">${score}</span><h1>`
+        board.removeEventListener('click')
+        timeEl.parentNode.classList.add('hide')
+    } else {
+        board.innerHTML = `<h1>Ваш счет: <span class="primary">${score}</span><h1>`
+        board.removeEventListener('click')
 timeEl.parentNode.classList.add('hide')
+    }
 }
 
 function createRandomCircle() {
