@@ -19,6 +19,7 @@ body {
     align-items: center;
     max-width: 400px;
     border-radius: 3px;
+    transition: .4s ease-in-out;
 }
 
 .square {
